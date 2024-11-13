@@ -2,6 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
+#Luiz Felipe Lopes da Silva ADS - III
+
 intervalos = [(300, 400), (400, 500), (500, 600), (600, 700), (700, 800), (800, 900), (900, 1000), (1000, 1100), (1100, 1200)]
 frequencia = [14, 46, 58, 76, 68, 62, 48, 22, 6]
 
@@ -46,13 +48,13 @@ def percentil(p, intervalos, frequencia, total):
     amplitude = intervalos[idx][1] - intervalos[idx][0]
     return li + ((pos - f_acum_ant) / fa) * amplitude
 
-def plotar_grafico(intervalos, frequencia):
+def grafico(intervalos, frequencia):
     intervalos_str = [f"{a}-{b}" for a, b in intervalos]
     plt.figure(figsize=(10, 6))
     plt.bar(intervalos_str, frequencia, color='green', edgecolor='black')
     plt.xlabel('Áreas (m³)')
     plt.ylabel('Número de Lotes')
-    plt.title('Distribuição de Frequência das Áreas dos Lotes')
+    plt.title('Distribuição de frequência areas dos lotes')
     plt.xticks(rotation=45)
     plt.tight_layout()
     plt.show()
@@ -82,6 +84,6 @@ def main():
     print("P90 (90º percentil):", p90)
 
     
-    plotar_grafico(intervalos, frequencia)
+    grafico(intervalos, frequencia)
 
 main()
